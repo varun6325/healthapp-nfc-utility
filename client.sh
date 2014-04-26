@@ -1,10 +1,10 @@
 #!/bin/bash
-#HOME_DIR="~/Projects/libllcp"    #for asheesh's laptop
-HOME_DIR="~/libllcp"              #for varun's laptop
+HOME_DIR="~/Projects/libllcp"    #for asheesh's laptop
+#HOME_DIR="~/libllcp"              #for varun's laptop
 WAIT=1                            # to synchronize with the server
 # to check whether the nfc device is opened or not
-if [ "`ls /dev/ttyUSB*`" != "ttyUSB0" -a "`ls /dev/ttyUSB*`" != "ttyUSB$
-    echo " nfc device not opened" 
+if [ "`ls /dev/ttyUSB*`" != "ttyUSB0" -a "`ls /dev/ttyUSB*`" != "ttyUSB1" ]
+    echo "nfc device not opened" 
     exit 1
 fi
 
@@ -27,4 +27,3 @@ touch output.txt
 #session 2 ended
 
 cat output.txt           #print the data received
-
