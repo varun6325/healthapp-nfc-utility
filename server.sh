@@ -2,6 +2,14 @@
 HOME_DIR="/home/pi"
 WAIT=1                 # to read the last set of readings
 x=0
+
+if [ `whoami` != "root" ] 
+then
+    echo "Application needs to be run as root"
+    exit 1
+fi
+
+
 # to check whether the nfc device is opened or not
 if [ "`ls /dev/ttyUSB*`" != "ttyUSB0" -a "`ls /dev/ttyUSB*`" != "ttyUSB1" ]
     echo " nfc device not opened" 
